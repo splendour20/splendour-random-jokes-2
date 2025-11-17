@@ -32,7 +32,9 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 space-y-6">
-      <h1 className="text-3xl font-bold text-gray-800">Random Joke Generator</h1>
+      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-6">
+        Random Joke Generator
+      </h1>
 
       {/* Joke card */}
       <JokeDisplay loading={loading} setup={joke.setup} punchline={joke.punchline} />
