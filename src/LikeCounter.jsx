@@ -2,9 +2,9 @@ import React from 'react';
 
 function LikeCounter({ count }) {
   return (
-    <p className="text-lg font-medium">
-      Liked jokes: {count}
-    </p>
+    <div className="text-gray-700 font-semibold text-lg">
+      Likes: <span className="text-green-500">{count}</span>
+    </div>
   );
 }
 

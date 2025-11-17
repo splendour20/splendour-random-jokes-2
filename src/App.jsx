@@ -22,19 +22,25 @@ function App() {
     }
   };
 
+  const handleLike = () => {
+    setLikeCount(prev => prev + 1);
+  };
+
   useEffect(() => {
     fetchJoke();
   }, []);
 
-  const handleLike = () => {
-    setLikeCount((prevCount) => prevCount + 1);
-  };
-
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
-      <h1 className="text-3xl font-bold mb-6">Random Joke Generator</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 space-y-6">
+      <h1 className="text-3xl font-bold text-gray-800">Random Joke Generator</h1>
+
+      {/* Joke card */}
       <JokeDisplay loading={loading} setup={joke.setup} punchline={joke.punchline} />
+
+      {/* Buttons */}
       <Buttons onFetchNew={fetchJoke} onLike={handleLike} />
+
+      {/* Like counter */}
       <LikeCounter count={likeCount} />
     </div>
   );
